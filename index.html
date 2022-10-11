@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cynthia Teeters</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <header class="hero">
+      <!-- Title and Hero -->
+      <h1>Cynthia Teeters</h1>
+    </header>
+    <main class="main">
+      <!-- main information -->
+      <p class="intro">
+        Hi. My name is Cynthia Teeters and I am a web developer. I also teach web development and JavaScript at
+        <a href="https://raritanval.edu/">Raritan Valley Community College</a>.
+      </p>
+      <div class="card">
+        <div class="card__img-wrapper">
+          <div class="card__img" role="img" aria-label="illustration of a cow">🐮</div>
+        </div>
+        <div class="card__content-wrapper">
+          <p class="card__meta">100% certified organic dairy</p>
+          <div class="card__header">
+            <h1 class="card__title">Cowabunga! The Happy Milk</h1>
+            <svg class="card__heart" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+          </div>
+          <p class="card__description">With milk, the critical issue is grazing. We send our cows to graze grass daily, a more gentle and more natural farming. It makes for happy cows and milk we know you'll love.</p>
+          <div class="card__footer">
+            <button class="card__btn card__btn--outline">Add to cart</button>
+            <button class="card__btn">Buy now</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p class="footer">
+        &copy; 2022 Cynthia Teeters
+      </p>
+    </footer>
+    <script>
+      const productImage = document.querySelector(".card__img");
+
+      // replace the emoji with an svg version that will scale to larger sizes
+      twemoji.parse(productImage, {
+        folder: "svg",
+        ext: ".svg",
+        callback: function (icon, options, variant) {
+          productImage.style.display = "block";
+
+          return "".concat(options.base, options.size, "/", icon, options.ext);
+        }
+      });
+    </script>
+  </body>
+
+</html>
